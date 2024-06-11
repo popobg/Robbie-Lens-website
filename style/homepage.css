@@ -1,0 +1,392 @@
+/*
+** grid layout first section
+*/
+.head_background {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    align-items: center;
+    gap: 0 5%;
+}
+
+.head_background img{
+    grid-column: 1;
+    grid-row: 1 / -1;
+    justify-self: end;
+}
+
+h1.h_homepage {
+    grid-column: 2;
+    grid-row: 1;
+    align-self: center;
+}
+
+
+p.p_homepage {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+/*
+** highlighted text
+*/
+.enlargement {
+    font-size: larger;
+}
+
+strong.important {
+    color:#6a8cff;
+    font-size: inherit;
+    font-weight: bold;
+}
+
+/*
+** photos section
+*/
+.homepage_photos {
+    border-bottom: solid medium #7563ba;
+    border-right: solid thick #7563ba;
+    border-radius: 5%;
+
+    padding: 1% 1% 2% 1%;
+    margin: 7% auto;
+    max-width: 80%;
+    min-height: fit-content;
+
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: start;
+    align-items: center;
+}
+
+.homepage_photos em {
+    margin-bottom: 3%;
+}
+
+.photos_layout {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    align-items: space-between;
+    align-content: space-between;
+    gap: 1%;
+}
+
+.photos_layout img {
+    padding: 2%;
+}
+
+/*
+** social media section
+*/
+/* apply style to section if it is followed by
+a div with the class socialmedia_homepage */
+section:has(> .socialmedia_homepage) {
+    height: 15em;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 16em;
+    justify-content: center;
+    align-content: center;
+}
+
+.socialmedia_homepage {
+    border-bottom: solid medium #7563ba;
+    border-right: solid thick #7563ba;
+    border-radius: 10%;
+
+    padding: 2% 5% 5% 10%;
+    width: fit-content;
+    height: fit-content;
+
+    grid-column: 3;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.socialmedia_homepage div {
+    flex-basis: 150%;
+    display: flex;
+    flex-direction: row;
+    gap: 2.5em;
+}
+
+.socialmedia_homepage div a img {
+    position: relative;
+    left: 25%;
+}
+
+/*
+** form section
+*/
+#contact_form {
+    margin-bottom: 8%;
+
+    display: flex;
+    justify-content: center;
+}
+
+form {
+    background-color: #fccf40;
+    background-image: linear-gradient(#f6d365, #fda085);
+    border-radius: 25px;
+
+    min-width: 90%;
+    min-height: 35em;
+    max-height: fit-content;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+form > div {
+    margin: 5%;
+    width: 100%;
+}
+
+label {
+    font-weight: 600;
+}
+
+input, textarea {
+    border: transparent;
+    border-left: transparent;
+    border-radius: 5px;
+}
+
+/* change the outline added by some browser when the field is focused */
+input:focus,
+textarea:focus {
+    outline: inset rgba(255, 94, 0, 0.5);
+}
+
+input {
+    border-bottom: 0.2em solid rgba(242, 165, 82, 1) ;
+    border-right: 0.2em solid rgba(242, 165, 82, 1);
+
+    height : 2em;
+}
+
+/* set overflow to auto to harmonize the default value between the browsers */
+textarea {
+    border-bottom: 0.2em solid rgba(255, 208, 69, 1) ;
+    border-right: 0.2em solid rgba(255, 208, 69, 1);
+    overflow: auto;
+
+    min-height: 15em;
+    min-width: 100%;
+    max-width: 100%;
+}
+
+.contact_details {
+    height: 4.5em;
+
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.contact_details div {
+    width: 45%;
+    height: 100%;
+
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-between;
+}
+
+.contact_details input {
+    width: 100%;
+}
+
+.contact_message {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+}
+
+.contact_message label {
+    padding-bottom: 1.5%;
+}
+
+input[type="submit"], .form_link {
+    color: black;
+    font-weight: 600;
+    text-align: center;
+    background-color: rgba(255, 239, 186, 0.9);
+
+    border-top: transparent;
+    border-left: transparent;
+    border-bottom: 0.2em solid #fac823;
+    border-right: 0.2em solid #fac823;
+    border-radius: 0.2em;
+
+    padding: 0.5%;
+}
+
+input[type="submit"] {
+    padding-top: 0.5%;
+    margin-bottom: 2em;
+}
+
+input[type="submit"]:hover {
+    background-color: #f5d058;
+}
+
+.form_link {
+    position: absolute;
+    top : 25%;
+    left: 70%;
+}
+
+:user-invalid {
+    border-color: #f25252;
+}
+
+/*
+** footer
+*/
+footer .banner div.social_media {
+    display: none;
+}
+
+/*
+** Responsive design
+*/
+@media only screen and (max-width: 1400px) {
+    /* photo gallery responsiveness */
+    .homepage_photos {
+        border: none;
+        max-width: 100%;
+    }
+}
+
+
+@media only screen and (max-width: 1200px) {
+    /* homepage title responsiveness */
+    section.head_background {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .head_background img {
+        width: 90%;
+    }
+
+    /* form link button responsiveness */
+    .form_link {
+        padding: 3%;
+        margin: 10% 30%;
+        width: 40%;
+
+        position: static;
+
+        display: block;
+    }
+
+    /* social media links management */
+    section:has(> div.socialmedia_homepage) {
+        display: none;
+    }
+
+    footer .banner div.social_media {
+        display: flex;
+        margin-right: 2%;
+    }
+}
+
+/* smartphones and small devices design */
+@media only screen and (max-width: 600px) {
+    /* homepage title responsiveness */
+    section.head_background {
+        margin-top: 3%;
+    }
+
+    .head_background img {
+        width: 100vw;
+    }
+
+    h1.h_homepage {
+        text-align: center;
+    }
+
+    p.p_homepage {
+        border: none;
+    }
+
+    /* photo gallery responsiveness */
+    .homepage_photos {
+        border: none;
+        max-width: 100%;
+    }
+
+    div.photos_layout {
+        display: flex;
+        flex-flow: column wrap;
+    }
+
+    div.photos_layout img {
+        width: 100%;
+    }
+
+    /* form management */
+    #contact_form {
+        margin: 20% 3%;
+        height: 50em;
+    }
+
+    form {
+        background: none;
+        border: medium solid #fac823;
+        width: 100%;
+    }
+
+    .contact_details {
+        width: 80%;
+        min-height: 25%;
+
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .contact_details div {
+        width: 100%;
+        height: 40%;
+
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .contact_details div label[for="name"]::after {
+        content: " lettres et espaces uniquement";
+    }
+
+    .contact_details div label[for="email"]::after {
+        content: " format -@mail.ext";
+    }
+}
+
+/* smartphones with less wide screen */
+@media only screen and (max-width: 400px) {
+    /* form management */
+    #contact_form {
+        margin: 20% 0;
+    }
+
+    form {
+        border: none;
+    }
+
+    form h2 {
+        text-align: center;
+        margin: 0%;
+    }
+
+    .contact_details {
+        width: 90%;
+        min-height: 20%;
+    }
+}

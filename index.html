@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil - Robbie Lens Photographie</title>
+    <link rel="icon" type="image/x-icon" href= "./images/favicon.ico">
+
+    <link href="style/style.css" rel="stylesheet">
+    <link href="style/homepage.css" rel="stylesheet">
+
+    <script src="scripts/dom.js" defer></script>
+    <script src="scripts/form.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="banner">
+                <a href="#">
+                    <img src="images/logo.png" alt="logo">
+                </a>
+                <div>
+                    <a href="a_propos.html" class="banner_button">Présentation</a>
+                    <a href="portfolio.html" class="banner_button">Mon portfolio</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="head_background more_margin">
+            <div class="background1">Bakground 1</div>
+            <div class="background2">Bakground 2</div>
+            <img src="images/robbie-lens.png" alt="image of robbie lens">
+            <h1 class="h_homepage">Robbie Lens Photographie</h1>
+            <p class="presentation_box p_homepage"> <em class="enlargement">Où <strong class="important">professionalisme</strong> s'allie avec <strong class="important">passion</strong>.</em>
+
+            Depuis plus de 5 ans maintenant, j’exerce mon métier avec la passion qui m’anime : capturer l’essence de chaque instant.</p>
+        </section>
+
+        <a href="#contact_form" class="form_link">Un projet ? Contactez-moi !</a>
+
+        <section class="midpage">
+            <div>Répétition bannière</div>
+        </section>
+
+        <section class="homepage_photos">
+            <h2>Mon dernier projet</h2>
+            <em>Rêverie au bord de l'eau</em>
+            <div class="photos_layout">
+                <img src="images/accueil/element-1.png" alt="Twelve apostles - Australie" title="Twelve apostles - Australie" >
+                <img src="images/accueil/element-2.png" alt="Wai-O-Tapu - Nouvelle-Zélande" title="Wai-O-Tapu - Nouvelle-Zélande" >
+                <img src="images/accueil/element-3.png" alt="Parc National d'Abel Tasman - Nouvelle-Zélande" title="Parc National d'Abel Tasman - Nouvelle-Zélande" >
+                <img src="images/accueil/element-4.png" alt="Lac Rotorua - Nouvelle-Zélande" title="Lac Rotorua - Nouvelle-Zélande" >
+                <img src="images/accueil/element-5.png" alt="Milford Sound - Nouvelle-Zélande" title="Milford Sound - Nouvelle-Zélande" >
+                <img src="images/accueil/element-6.png" alt="Lac Wanaka - Nouvelle-Zélande" title="Lac Wanaka - Nouvelle-Zélande" >
+            </div>
+        </section>
+
+        <section>
+            <div class="socialmedia_homepage">
+                <h2>Mes réseaux</h2>
+                <div>
+                    <a href="https://twitter.com/" target="_blank">
+                        <img src="images/twitter.png" alt="twitter_logo">
+                        <span>@twitter</span>
+                    </a>
+                    <a href="https://www.instagram.com/" target="_blank">
+                        <img src="images/instagram.png" alt="instagram_logo">
+                        <span>@instagram</span>
+                    </a>
+                </div>
+        </section>
+
+        <section id="contact_form">
+            <form action="" method="get">
+                <h2>Parlons de votre projet</h2>
+                <div class="contact_details">
+                    <div>
+                        <label for="name">Nom * :</label>
+                        <input type="text" name="name" id="name" placeholder="ex: Michel Blanc" title="lettres (majuscules et/ou minuscules) et espaces acceptés ; champ obligatoire." pattern="[a-zA-Z]+(\s?[a-zA-Z]*)*" required>
+                    </div>
+                    <div>
+                        <label for="email">Email * :</label>
+                        <input type="email" name="email" id="email" placeholder="ex: michel.blanc@mail.com" title="'-@mailbox.ext' ; champ obligatoire." pattern="^[a-zA-Z][\w.\-]*@[\w.\-]+\.[a-zA-Z]+" required>
+                    </div>
+                </div>
+                <div class="contact_message">
+                    <label for="message">Décrivez-moi votre projet en quelques lignes :</label>
+                    <textarea name="message" id="message" placeholder="C'est à vous !" maxlength="1000"></textarea>
+                </div>
+                <input type="submit" value="Envoyer">
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <div class="banner">
+            <a href="#">
+                <img src="images/logo.png" alt="logo">
+            </a>
+            <div class="social_media">
+                <a href="https://twitter.com/" target="_blank" id="twitter">
+                    <img src="images/twitter.png" alt="twitter_logo">
+                </a>
+                <a href="https://www.instagram.com/" target="_blank" id="insta">
+                    <img src="images/instagram.png" alt="instagram_logo">
+                </a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

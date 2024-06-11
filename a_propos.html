@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Présentation de Robbie Lens</title>
+
+    <link rel="icon" type="image/x-icon" href= "./images/favicon.ico">
+
+    <link href="style/style.css" rel="stylesheet">
+    <link href="style/a_propos.css" rel="stylesheet">
+
+    <script src="scripts/dom.js" defer></script>
+    <script src="scripts/popup.js" defer></script>
+    <script src="scripts/photos_slider.js" defer></script>
+    <script src="scripts/apropos_main.js" defer></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="banner">
+                <!-- logo-link to go back to the main page -->
+                <a href="index.html">
+                    <img src="images/logo.png" alt="logo" title="Retourner à l'accueil">
+                </a>
+                <div>
+                    <a href="index.html" class="banner_button responsive_design">Accueil</a>
+                    <a href="portfolio.html" class="banner_button ">Mon portfolio</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <nav>
+        <ul class="navig">
+            <li><a href="index.html">Accueil</a></li>
+            <li> > </li>
+            <li>A propos de Robbie Lens</li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="head_background more_margin">
+            <div class="background1">Bakground 1</div>
+            <div class="background2">Bakground 2</div>
+            <h1 class="h_about">A propos de Robbie Lens</h1>
+            <p class="presentation_box p_about">Photographe depuis plus de 5 ans, je réalise des reportages aux photos dynamiques et pertinentes pour vos projets de communication.
+
+            <span id="multicolor_text">Créativité, qualité, et sérénité pour vous !</span>
+
+            Je gère tout, depuis la direction artistique, la réalisation du reportage, jusqu’à la livraison de vos photos retouchées, prêtes à l’emploi.</p>
+            <div class="services">
+                <h2>Services proposés</h2>
+                <ul>
+                    <li>Portrait seul ou à plusieurs</li>
+                    <li>Shooting mode</li>
+                    <li>Retouches sur mesure</li>
+                    <li>Développement</li>
+                </ul>
+            </div>
+        </section>
+
+        <button class="button_price">Voir les tarifs</button>
+
+        <section class="midpage">
+            <div>Répétition bannière</div>
+        </section>
+
+        <section class="gallery">
+            <h2>Galerie photos</h2>
+            <div class="slideshow_container">
+                <div class="slides fade">
+                    <a href="images/galerie/galerie1.jpg" alt="photo peinture">
+                        <img src="images/galerie/galerie1_mini.png" alt="Miniature peinture" title="Cliquez pour agrandir">
+                    </a>
+                </div>
+
+                <div class="slides fade">
+                        <a href="images/galerie/galerie2.jpg" alt="photo verre">
+                            <img src="images/galerie/galerie2_mini.png" alt="Miniature verre" title="Cliquez pour agrandir">
+                        </a>
+                </div>
+
+                <div class="slides fade">
+                        <a href="images/galerie/galerie3.jpg" alt="photo Grèce">
+                            <img src="images/galerie/galerie3_mini.png" alt="Miniature Grèce" title="Cliquez pour agrandir">
+                        </a>
+                </div>
+
+                <div class="slides fade">
+                        <a href="images/galerie/galerie4.jpg" alt="photo vêtements">
+                            <img src="images/galerie/galerie4_mini.png" alt="Miniature vêtements" title="Cliquez pour agrandir">
+                        </a>
+                </div>
+
+                <div class="slides fade">
+                        <a href="images/galerie/galerie5.jpg" alt="photo violettes">
+                            <img src="images/galerie/galerie5_mini.png" alt="Miniature violettes" title="Cliquez pour agrandir">
+                        </a>
+                </div>
+
+                <!-- scrollers right-left -->
+                <a class="prev" onclick="scroll_slides(-1)">&#10094;</a>
+                <a class="next" onclick="scroll_slides(1)">&#10095;</a>
+            </div>
+
+            <div id="dot_emplacement">
+                <span class="dot" onclick="current_slide(1)"></span>
+                <span class="dot" onclick="current_slide(2)"></span>
+                <span class="dot" onclick="current_slide(3)"></span>
+                <span class="dot" onclick="current_slide(4)"></span>
+                <span class="dot" onclick="current_slide(5)"></span>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="banner">
+            <a href="index.html">
+                <img src="images/logo.png" alt="logo" title="Retourner à l'accueil">
+            </a>
+            <div>
+                <a href="index.html#contact_form" class="banner_button">Un projet ? Contactez-moi !</a>
+                <div class="social_media">
+                    <a href="https://twitter.com/" target="_blank" id="twitter">
+                        <img src="images/twitter.png" alt="twitter_logo">
+                    </a>
+                    <a href="https://www.instagram.com/" target="_blank" id="insta">
+                        <img src="images/instagram.png" alt="instagram_logo">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- direct child of body -->
+    <div class="popup_background">
+        <div class="price_popup">
+            <table>
+                <caption>Tarifs</caption>
+                <tr>
+                    <th>Désignation</th>
+                    <th>Quantité</th>
+                    <th>Prix</th>
+                </tr>
+                <tr>
+                    <td>Retouches photo studio professionnel</td>
+                    <td>x800 photos</td>
+                    <td>3200€/800 photos</td>
+                </tr>
+                <tr>
+                    <td>Assistant photo lumière professionnel</td>
+                    <td>x2 sets studios</td>
+                    <td>1500€/journée</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

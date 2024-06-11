@@ -1,0 +1,370 @@
+/*
+** grid layout first section
+*/
+section.head_background {
+    display: grid;
+
+    grid-template-columns: 1.5fr 1fr;
+    grid-template-rows: 1fr 2fr;
+    gap: 0 10%;
+    justify-items: center;
+    align-items: start;
+}
+
+.h_about {
+    margin-bottom: 2%;
+
+    grid-row: 1;
+    grid-column: 1 / -1;
+    align-self: end;
+}
+
+.p_about {
+    grid-row: 2;
+    grid-column: 1;
+    justify-self: end;
+}
+
+.services {
+    border-left: rgba(117, 99, 186, 0.5) solid medium;
+    padding-left: 15%;
+
+    grid-row: 2;
+    grid-column: 2;
+    justify-self: start;
+}
+
+.services h2 {
+    margin: 1% 0;
+}
+
+/* list items style */
+.services ul {
+    padding-left: 4%;
+}
+
+.services li {
+    font-size: larger;
+    padding: 1% 0;
+}
+
+/* highlighted text */
+#multicolor_text {
+    color: transparent;
+    font-weight: 700;
+    background-image: linear-gradient(to right, #22c1c3, #f7797d, #cb2d3e);
+    background-clip: text;
+}
+
+/*
+** slideshow
+*/
+.gallery {
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+
+.gallery h2 {
+    margin: auto;
+    max-width: 100%;
+}
+
+/* position relative so the children elements in absolute position
+are placed according to the position of the container */
+.slideshow_container {
+    margin:auto;
+    max-width: 90%;
+
+    position: relative;
+}
+
+.slides {
+    /* static height, not influenced to the picture size
+    so the previous/next buttons stay at the same place */
+    height: 30em;
+
+    display:none;
+    align-items: center;
+    justify-content: center;
+}
+
+.prev,
+.next {
+    color: black;
+    font-weight: bold;
+    font-size: 18px;
+    border-radius: 0 3px 3px 0;
+
+    padding: 3%;
+    margin-top: -3%;
+    width: auto;
+
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+
+    transition: 0.6s ease;
+    user-select: none;
+}
+
+.next {
+    border-radius: 3px 0 0 3px;
+    right: 0;
+}
+
+.prev:hover,
+.next:hover {
+    text-decoration: none;
+    background-color: rgba(85, 85, 85, 0.8);
+}
+
+#dot_emplacement {
+    text-align: center;
+    margin-top: 1em;
+}
+
+.dot {
+    background-color: #bbb;
+    border-radius: 50%;
+
+    margin: 0px 2px;
+    height: 15px;
+    width: 15px;
+
+    cursor: pointer;
+
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+    background-color: #717171;
+}
+
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+
+/*
+** popup management
+*/
+
+/* button price */
+.button_price {
+    color: black;
+    font-family: inherit;
+    font-weight: 600;
+    font-size: 1.1em;
+    text-align: center;
+    background-color: rgba(255, 239, 186, 0.9);
+
+    border-top: transparent;
+    border-left: transparent;
+    border-bottom: 0.2em solid #fac823;
+    border-right: 0.2em solid #fac823;
+    border-radius: 5px;
+
+    padding: 1%;
+
+    position: absolute;
+    top: 40%;
+    right: 10%;
+}
+
+.button_price:hover {
+    background-color: rgba(250, 200, 35, 0.6);
+}
+
+.button_price:active {
+    font-style: italic;
+}
+
+/* blurry background */
+.popup_background {
+    background-color: rgba(255, 255, 255, 0.5);
+
+    width: 100vw;
+    height: 100vh;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    display: none;
+}
+
+#popup_active {
+    display: flex;
+}
+
+/* box popup */
+.price_popup {
+    text-align: center;
+    color: black;
+    font-size: 17px;
+    font-weight: 500;
+    background-image: linear-gradient(#f6d365, #fda085);
+    border-radius: 30px;
+
+    padding: 2%;
+    width: 70%;
+    height: 70%;
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 1;
+
+    transform: translate(-50%, -50%);
+}
+
+caption {
+    font-size: larger;
+    font-weight: 700;
+
+    padding: 3%;
+}
+
+table {
+    border-collapse: collapse;
+    margin: auto;
+    width: 80%;
+    height: 80%;
+}
+
+
+td, th {
+    padding: 5%;
+    border: 0.2em solid black;
+}
+
+/*
+** Responsive design
+*/
+@media only screen and (max-width: 1200px) {
+    /* banner management */
+    header nav .banner div {
+        width: 80%;
+
+        position: relative;
+        left: 5%;
+    }
+
+    /* presentation section management */
+    section.head_background {
+        margin: 5% 5%;
+
+        display: flex;
+        flex-direction: column;
+    }
+
+    .h_about {
+        align-self: center;
+    }
+
+    p.presentation_box {
+        border: none;
+        margin: 5% 0%;
+        width: 100%;
+    }
+
+    div.services {
+        border-left: none;
+        border-top : rgba(117, 99, 186, 0.5) solid medium;
+
+        padding: 0%;
+
+        align-self: start;
+    }
+
+    /* price popup management */
+    .button_price {
+        padding: 2%;
+        margin-bottom: 10%;
+        margin-left: 40%;
+        width: 20%;
+
+        position: static;
+
+        display: block;
+    }
+
+    .price_popup {
+        width: 95%;
+        height: 60%;
+    }
+
+    td, th {
+        padding: 2%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    p.presentation_box {
+        margin-bottom: 10%;
+    }
+
+    div.services {
+        margin-bottom: 5%;
+        align-self: center;
+    }
+
+    /* price popup management */
+    .button_price {
+        width: 40%;
+        margin: auto;
+        margin-bottom: 15%;
+    }
+
+    table {
+        width: 100%;
+    }
+
+    /* slider responsiveness */
+    .gallery {
+        margin:20% 3%;
+    }
+
+    div.slideshow_container {
+        max-width: 85%;
+        height: fit-content;
+    }
+
+    .slides {
+        height: 27em;
+    }
+
+    .slides a img {
+        max-width: 100%;
+    }
+
+    .prev {
+        left: -10%;
+    }
+
+    .next {
+        right: -10%;
+    }
+
+    .dot {
+        padding: 3%;
+        margin: 0 3%;
+    }
+}
+
+@media only screen and (max-height: 1200px) and (orientation: landscape) {
+    .price_popup {
+        width: 80%;
+        height: 90%;
+    }
+
+    caption {
+        padding-top: 0%;
+    }
+}
